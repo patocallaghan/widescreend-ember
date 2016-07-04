@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
   review: '',
   rating: null,
   dateWatched: null,
+  showSuccessScreen: false,
   ratingOptions: [
     {
       id: 1,
@@ -27,20 +28,34 @@ export default Ember.Controller.extend({
       title: '5 star'
     },
   ],
-  cannotSaveMovie: Em.computed('name', 'review', 'rating', 'dateWatched', function() {
+  cannotSaveMovie: Ember.computed('name', 'review', 'rating', 'dateWatched', function() {
     return !(this.get('name') && this.get('review') && this.get('dateWatched') && this.get('rating'));
   }),
+  resetMovieForm() {
+    this.setProperties({
+      name: '',
+      review: '',
+      rating: null,
+      dateWatched: null
+    });
+  },
   actions: {
     saveMovie(){
-      console.log({
+      this.store.createRecord('movie', {
         name: this.get('name'),
         review: this.get('review'),
         rating: this.get('rating'),
         dateWatched: this.get('dateWatched')
+      }).save().then(() => {
+        this.set('showSuccessScreen', true);
       });
     },
     updateRating(selectedOption) {
       this.set('rating', selectedOption.id);
+    },
+    addAnotherMovie() {
+      this.set('showSuccessScreen', false);
+      this.resetMovieForm();
     }
   }
 });
