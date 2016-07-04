@@ -1,0 +1,18 @@
+<div class="row">
+  {{#each model as |movie|}}
+  <div class="col-sm-6 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{#link-to 'movies.movie' movie}}{{movie.title}}{{/link-to}}
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>Rating: {{movie.rating}}</p>
+        <p>{{movie.review}}</p>
+        <p><b>Date Watched:</b> {{moment-to-now movie.dateWatched}}</p>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

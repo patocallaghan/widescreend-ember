@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  name: '',
+  title: '',
   review: '',
   rating: null,
   dateWatched: null,
@@ -28,12 +28,12 @@ export default Ember.Controller.extend({
       title: '5 star'
     },
   ],
-  cannotSaveMovie: Ember.computed('name', 'review', 'rating', 'dateWatched', function() {
-    return !(this.get('name') && this.get('review') && this.get('dateWatched') && this.get('rating'));
+  cannotSaveMovie: Ember.computed('title', 'review', 'rating', 'dateWatched', function() {
+    return !(this.get('title') && this.get('review') && this.get('dateWatched') && this.get('rating'));
   }),
   resetMovieForm() {
     this.setProperties({
-      name: '',
+      title: '',
       review: '',
       rating: null,
       dateWatched: null
@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
   actions: {
     saveMovie(){
       this.store.createRecord('movie', {
-        name: this.get('name'),
+        title: this.get('title'),
         review: this.get('review'),
         rating: this.get('rating'),
         dateWatched: this.get('dateWatched')
