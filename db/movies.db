@@ -1,5 +1,1 @@
-{"type":"movies","attributes":{"title":"This is the end","rating":3,"review":"so it is ","date-watched":"2016-07-19T23:00:00.000Z"},"_id":"yjL6DXiY8aDjl3Jo"}
-{"$$deleted":true,"_id":"yjL6DXiY8aDjl3Jo"}
-{"type":"movies","attributes":{"title":"Donnie Darko","rating":2,"review":"Best Movie Ever!","date-watched":"2016-07-25T23:00:00.000Z"},"_id":"MIO0tP32TQuK9jzf"}
-{"type":"movies","attributes":{"title":"The Shawshank Redemption","rating":5,"review":"soo good","date-watched":"2016-07-19T23:00:00.000Z"},"_id":"r3JmzVm4G6RnNd5Z"}
-{"$$deleted":true,"_id":"r3JmzVm4G6RnNd5Z"}
+{"type":"movies","attributes":{"title":"Frozen","review":"holler hollerxx","date-watched":"2016-07-26T23:00:00.000Z","rating":2},"_id":"2ZMNqMDK7dUQRvhQ"}

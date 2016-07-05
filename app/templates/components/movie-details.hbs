@@ -1,0 +1,15 @@
+{{#unless editing}}
+  <h1>{{movie.title}}</h1>
+  <p>{{movie.review}}</p>
+  <p>Rating: {{movie.rating}}</p>
+  <p>Date Watched: {{moment-format movie.dateWatched 'DD/MM/YYYY'}}</p>
+  <button type="button" class="btn btn-primary" {{action 'toggleEdit'}}>Edit</button>
+  <button type="button" class="btn btn-default btn-danger" {{action attrs.deleteMovie movie}}>Delete</button>
+{{else}}
+  <div class="row">
+    {{movie-form
+      movie=movie
+      saveMovie=(action attrs.updateMovie)
+    }}
+  </div>
+{{/unless}}

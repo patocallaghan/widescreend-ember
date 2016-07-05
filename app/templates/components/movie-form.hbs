@@ -1,0 +1,37 @@
+<div class="col-md-6">
+  {{#if showSuccessScreen}}
+  <div class="alert alert-success">
+    <h4>Time for another movie aye?</h4>
+    <p>Movie Title: {{title}}</p>
+    <p>Rating: {{rating}}</p>
+    <p>Your review: {{review}}</p>
+    <p>Date watched: {{dateWatched}}</p>
+  </div>
+  <a class="hot" {{action 'addAnotherMovie'}}>Add another?</a>
+  {{else}}
+  <div class="form-group has-feedback ">
+    <label>Movie Title</label>
+    {{input placeholder="Movie Title" class="form-control" value=title}}
+  </div>
+  <div class="form-group has-feedback">
+    <label>Your review</label>
+    {{textarea rows=5 placeholder="So what did you think of the movie?" class="form-control" value=review}}
+  </div>
+  <div class="form-group has-feedback">
+    <label>Your rating</label>
+    {{ted-select
+      content=ratingOptions
+      selectClassNames="form-control"
+      optionLabelKey="title"
+      optionValueKey="id"
+      selected=rating
+      onchange=(action "updateRating")
+    }}
+  </div>
+  <div class="form-group has-feedback">
+    <label>Date watched</label>
+    {{bootstrap-datepicker value=dateWatched}}
+  </div>
+  <button class="btn btn-success" {{action "save" movieDetails}} disabled={{cannotSaveMovie}}>Save</button>
+  {{/if}}
+</div>

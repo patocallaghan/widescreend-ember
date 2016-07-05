@@ -5,14 +5,12 @@
       <li class="active">{{model.title}}</li>
     </ol>
     <div>
-      <h1>{{model.title}}</h1>
-      <p>{{model.review}}</p>
-      <p>Rating: {{model.rating}}</p>
-      <p>Date Watched: {{moment-format model.dateWatched 'DD/MM/YYYY'}}</p>
-      <button type="button" class="btn btn-primary">Edit</button>
-      <button type="button" class="btn btn-default btn-danger" {{action 'deleteMovie' model}}>Delete</button>
+      {{movie-details
+        movie=model
+        editing=editing
+        deleteMovie=(action 'deleteMovie')
+        updateMovie=(action 'updateMovie')
+      }}
     </div>
   </div>
 </div>
-
-
