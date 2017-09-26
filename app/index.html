@@ -9,7 +9,7 @@
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="assets/widescreend.css">
 
     {{content-for "head-footer"}}
@@ -17,8 +17,8 @@
   <body>
     {{content-for "body"}}
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/widescreend.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/widescreend.js"></script>
 
     {{content-for "body-footer"}}
   </body>
